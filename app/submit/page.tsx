@@ -1,6 +1,5 @@
 "use client";
 
-import handler from "@/lib/submit";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
