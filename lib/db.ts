@@ -1,5 +1,8 @@
 import supabase from "./supabase";
 
+/**
+ * Returns all approved submissions
+ */
 export async function getAllReceipts() {
   const { data, error } = await supabase
     .from("submissions")
@@ -10,9 +13,8 @@ export async function getAllReceipts() {
   return data ?? [];
 }
 /**
- * 
+ * Returns a specific case
  * @param caseId - uuid in db to lookup
- * @returns 
  */
 export async function getReceipt({ caseId }: { caseId: string }) {
     const { data, error } = await supabase
