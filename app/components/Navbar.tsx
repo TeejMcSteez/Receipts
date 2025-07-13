@@ -28,6 +28,7 @@ export default function Navbar() {
                 <DropdownMenuItem onClick={() => handleMenuClick("/cases")}>Cases</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => handleMenuClick("/tags")}>Tags</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => handleMenuClick("/tos")}>TOS</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleMenuClick("/submit")}>Submit</DropdownMenuItem>
             </DropdownMenuContent>
             </DropdownMenu>
         </div>
