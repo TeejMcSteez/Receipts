@@ -1,20 +1,20 @@
 "use client";
 
 
+
 import { DropdownMenu,
     DropdownMenuTrigger,
     DropdownMenuContent,
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuItem } from "@/components/ui/dropdown-menu";
+import { useRouter } from "next/navigation";
+
 
 export default function Navbar() {
-    const handleMenuClick = (text: string) => {
-        const id = text.toLowerCase();
-        const el = document.getElementById(id);
-        if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-        }
+    const router = useRouter();
+    const handleMenuClick = (url: string) => {
+        router.push(url);
     };
 
     return(
@@ -22,7 +22,7 @@ export default function Navbar() {
             <DropdownMenu>
             <DropdownMenuTrigger>Menu</DropdownMenuTrigger>
             <DropdownMenuContent>
-                <DropdownMenuItem onClick={() => handleMenuClick("Search")}>Search</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleMenuClick("/search")}>Search</DropdownMenuItem>
             </DropdownMenuContent>
             </DropdownMenu>
         </div>
