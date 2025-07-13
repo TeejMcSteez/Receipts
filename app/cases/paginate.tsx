@@ -13,7 +13,7 @@ export default async function ReceiptsPage() {
         {receipts.map((r) => (
           <Card key={r.id}>
             <CardContent className="p-4 space-y-1">
-              <Link href={`/receipts/${r.id}`}>
+              <Link href={`/cases/${r.id}`}>
                 <h2 className="text-xl font-semibold hover:underline">{r.title}</h2>
               </Link>
               <p className="text-muted-foreground line-clamp-3">{r.summary}</p>
