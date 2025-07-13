@@ -4,7 +4,7 @@ import supabase from "@/lib/supabase";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  const { title, summary, agencies, tags, quotes, sources, opinion } = body;
+  const { title, summary, tags, quotes, sources, opinion } = body;
 
   if (!title || !summary) {
     return NextResponse.json({ error: "Missing input fields" }, { status: 400 });
