@@ -21,14 +21,20 @@ export default function Navbar() {
     return(
         <div className="m-2 p-1">
             <DropdownMenu>
-            <DropdownMenuTrigger><Button variant={'ghost'}>Menu</Button></DropdownMenuTrigger>
+            <DropdownMenuTrigger><Button variant={'ghost'} className="text-xl ">Menu</Button></DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuItem onClick={() => handleMenuClick("/")}>Home</DropdownMenuItem>
+                <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => handleMenuClick("/about")}>About</DropdownMenuItem>
+                <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => handleMenuClick("/agencies")}>Agencies</DropdownMenuItem>
+                <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => handleMenuClick("/cases")}>Cases</DropdownMenuItem>
+                <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => handleMenuClick("/tags")}>Tags</DropdownMenuItem>
+                <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => handleMenuClick("/tos")}>TOS</DropdownMenuItem>
+                <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => handleMenuClick("/submit")}>Submit</DropdownMenuItem>
             </DropdownMenuContent>
             </DropdownMenu>
