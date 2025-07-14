@@ -9,6 +9,7 @@ import { DropdownMenu,
     DropdownMenuSeparator,
     DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 
 export default function Navbar() {
@@ -20,7 +21,7 @@ export default function Navbar() {
     return(
         <div className="m-2 p-1">
             <DropdownMenu>
-            <DropdownMenuTrigger>Menu</DropdownMenuTrigger>
+            <DropdownMenuTrigger><Button variant={'ghost'}>Menu</Button></DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuItem onClick={() => handleMenuClick("/")}>Home</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => handleMenuClick("/about")}>About</DropdownMenuItem>
