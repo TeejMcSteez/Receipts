@@ -7,19 +7,34 @@ import { DropdownMenu,
     DropdownMenuSeparator,
     DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
 
-
+/**
+ * Returns Navbar with dropdown to all links and menu button
+ * @returns JSX.Element
+ */
 export default function Navbar() {
     const router = useRouter();
     const handleMenuClick = (url: string) => {
         router.push(url);
     };
+    /**
+     * Returns basic menu hamburger button using spans
+     * @returns JSX.Element
+     */
+    const MenuButton = () => {
+        return (
+            <a className="flex space-y-1 flex-col text-center rounded hover:bg-gray-100 p-2">
+                <span className="bg-gray-600 rounded block h-1 w-5"></span>
+                <span className="bg-gray-600 rounded block h-1 w-5"></span>
+                <span className="bg-gray-600 rounded block h-1 w-5"></span>
+            </a>
+        );
+    }
 
     return(
-        <div className="m-2 p-1">
+        <div className="flex place-content-end items-end m-2 p-1">
             <DropdownMenu>
-            <DropdownMenuTrigger><Button variant="ghost" className="text-xl ">Menu</Button></DropdownMenuTrigger>
+            <DropdownMenuTrigger>{MenuButton()}</DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuItem onClick={() => handleMenuClick("/")}>Home</DropdownMenuItem>
                 <DropdownMenuSeparator />
