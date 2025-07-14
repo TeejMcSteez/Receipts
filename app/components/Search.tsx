@@ -3,6 +3,7 @@ import { useState } from "react"
 import { getFuzzySearch } from "@/lib/db";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import { toast } from "sonner";
 
 type FuzzyResult = {
     source: string;
@@ -23,7 +24,7 @@ export default function Search() {
         const search = await getFuzzySearch({ text: q });
         console.log(search);
         if (!search.length) {
-            alert("Nothing found!");
+            toast("Nothing Found!");
         } else {
             setResults(search);
         }
