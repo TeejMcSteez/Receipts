@@ -2,15 +2,9 @@ import { notFound } from "next/navigation";
 import { getReceipt } from "@/lib/db";
 import Navbar from "@/app/components/Navbar";
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
 
-export default async function SubmissionPage({ params }: PageProps) {
-    const id = await params;
-    const data = await getReceipt({ caseId: id.id });
+export default async function SubmissionPage({ params }: {params: any}) {
+  const data = await getReceipt({ caseId: params.id });
 
   if (!data) return notFound();
 
