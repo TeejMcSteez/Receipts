@@ -25,7 +25,11 @@ export async function getReceipt({ caseId }: { caseId: string }) {
 
     return data ?? "";
 }
-
+/**
+ * Uses postgresql rpc function to fuzzy search the db
+ * @param text - string to fuzzy search the database
+ * @returns data | null
+ */
 export async function getFuzzySearch({ text }: {text: string}) {
   const { data, error } = await supabase.rpc("smart_fuzzy_search", {
     query: text,
@@ -37,4 +41,15 @@ export async function getFuzzySearch({ text }: {text: string}) {
   } else {
     return data ?? null; // If data is anything falsey return null
   }
+}
+/**
+ * Get all cases in the database
+ * @returns data | null
+ */
+export async function getCases() {
+  const { data, error } = await supabase
+    .from("cases")
+    .select("id, title, summary, opinion");
+
+    return data ?? [];
 }
