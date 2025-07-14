@@ -24,3 +24,16 @@ export async function getReceipt({ caseId }: { caseId: string }) {
 
     return data ?? [];
 }
+
+export async function getFuzzySearch({ text }: {text: string}) {
+  const { data, error } = await supabase.rpc("smart_fuzzy_search", {
+    query: text,
+    scope: null
+  });
+  
+  if (error) {
+    return { message: error.message }
+  } else {
+    return data ?? null; // If data is anything falsey return null
+  }
+}
