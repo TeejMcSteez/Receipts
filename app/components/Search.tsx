@@ -47,7 +47,7 @@ export default function Search() {
                 {results.map((r) => (
                 <Card key={r.id}>
                     <CardContent className="p-4 space-y-1">
-                    <Link href={`/${r.source}/${r.id}`}>
+                    <Link href={`/submission/${r.id}`}>
                         <h3 className="text-lg font-semibold hover:underline">{r.title}</h3>
                     </Link>
                     {r.summary && (

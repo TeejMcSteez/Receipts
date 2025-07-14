@@ -20,9 +20,10 @@ export async function getReceipt({ caseId }: { caseId: string }) {
     const { data, error } = await supabase
     .from("submissions")
     .select("id, title, summary, quotes, tags, sources, opinion, submitted_by, created_at")
-    .eq("id", caseId);
+    .eq("id", caseId)
+    .maybeSingle();
 
-    return data ?? [];
+    return data ?? "";
 }
 
 export async function getFuzzySearch({ text }: {text: string}) {
