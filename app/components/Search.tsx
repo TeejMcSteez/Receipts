@@ -31,7 +31,7 @@ export default function Search() {
     }
 
     return (
-        <div>
+        <div className="flex flex-col items-center justify-center">
             <form onSubmit={handleSearch} className="flex items-center gap-2">
             <Input
                 type="text"
