@@ -2,8 +2,7 @@ import { notFound } from "next/navigation";
 import { getReceipt } from "@/lib/db";
 import Navbar from "@/app/components/Navbar";
 
-
-export default async function SubmissionPage({ params }: {params: any}) {
+export default async function SubmissionPage({ params }: any) {
   const data = await getReceipt({ caseId: params.id });
 
   if (!data) return notFound();
