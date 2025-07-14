@@ -1,7 +1,5 @@
 "use client";
 
-
-
 import { DropdownMenu,
     DropdownMenuTrigger,
     DropdownMenuContent,
@@ -21,7 +19,7 @@ export default function Navbar() {
     return(
         <div className="m-2 p-1">
             <DropdownMenu>
-            <DropdownMenuTrigger><Button variant={'ghost'} className="text-xl ">Menu</Button></DropdownMenuTrigger>
+            <DropdownMenuTrigger><Button variant="ghost" className="text-xl ">Menu</Button></DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuItem onClick={() => handleMenuClick("/")}>Home</DropdownMenuItem>
                 <DropdownMenuSeparator />
