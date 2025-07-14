@@ -22,7 +22,11 @@ export default function Search() {
         // Fetch/filter logic
         const search = await getFuzzySearch({ text: q });
         console.log(search);
-        setResults(search);
+        if (!search.length) {
+            alert("Nothing found!");
+        } else {
+            setResults(search);
+        }
     }
 
     return (
