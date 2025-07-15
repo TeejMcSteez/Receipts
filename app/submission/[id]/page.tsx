@@ -12,10 +12,7 @@ export default async function SubmissionPage({ params }: SubmissionProps) {
 
   return (
     <main className="max-w-4xl mx-auto p-6 space-y-6">
-        <div>
-            <Navbar />
-        </div>  
-
+        <Navbar />
         <Submission id={props.id}/>
     </main>
   );
