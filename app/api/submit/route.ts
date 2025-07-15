@@ -19,6 +19,7 @@ export async function POST(req: NextRequest) {
       sources,
       opinion,
       status: "pending",
+      created_at: new Date(Date.now()).toISOString()
     },
   ]);
 
