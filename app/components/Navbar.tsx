@@ -32,7 +32,8 @@ export default function Navbar() {
     }
 
     return(
-        <div className="flex place-content-end items-end m-2 p-1">
+        <div className="flex flex-row justify-between p-1 m-1">
+            <h1 className="m-2 p-1 text-xl">Receipts</h1>
             <DropdownMenu>
             <DropdownMenuTrigger>{MenuButton()}</DropdownMenuTrigger>
             <DropdownMenuContent>
