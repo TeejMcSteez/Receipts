@@ -1,13 +1,7 @@
 import Navbar from "@/app/components/Navbar";
 import Submission from "./Submission";
 
-interface SubmissionProps {
-  params: {
-    id: string
-  }
-}
-
-export default async function SubmissionPage({ params }: SubmissionProps) {
+export default async function SubmissionPage({ params }: any) {
   const props = await params;
 
   return (

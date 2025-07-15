@@ -1,13 +1,7 @@
 import Case from "./Case"
 import Navbar from "@/app/components/Navbar"
 
-interface CaseProps {
-    params: {
-        id: string
-    }
-}
-
-export default async function CaseDisplay({ params }: CaseProps) {
+export default async function CaseDisplay({ params }: any) {
     const props = await params;
 
     return (
