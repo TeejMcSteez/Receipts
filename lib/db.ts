@@ -61,7 +61,7 @@ export async function getCases() {
  *  summary: any;
  *  opinion: any; }[ ] | null
  */
-export default async function getCase({ id }: {id: string}) {
+export async function getCase({ id }: { id: string }) {
   const { data, error } = await supabase
     .from("cases")
     .select("title, summary, opinion")
@@ -69,4 +69,30 @@ export default async function getCase({ id }: {id: string}) {
     .single();
 
     return data ?? null;
+}
+/**
+ * 
+ * @param id - uuid in db to get agency
+ * @returns data: { id: any; name: any; description: any; }[] | null
+ */
+export async function getAgencies() {
+  const { data, error } = await supabase
+    .from("agencies")
+    .select("id, name, description");
+
+  return data ?? [];
+}
+/**
+ * Returns an agencies name and description
+ * @param id - uuid in the database
+ * @returns data: { name: any; description: any; } | null
+ */
+export async function getAgency({ id }: { id: string }) {
+  const { data, error } = await supabase
+    .from("agencies")
+    .select("name, description")
+    .eq("id", id)
+    .single();
+
+  return data ?? "";
 }
