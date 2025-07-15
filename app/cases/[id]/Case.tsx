@@ -1,4 +1,4 @@
-import getCase from "@/lib/db"
+import { getCase } from "@/lib/db"
 import { notFound } from "next/navigation";
 
 export default async function Case({ id }: { id: string }) {
