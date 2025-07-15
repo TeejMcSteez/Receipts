@@ -1,42 +1,22 @@
-import { notFound } from "next/navigation";
-import { getReceipt } from "@/lib/db";
 import Navbar from "@/app/components/Navbar";
+import Submission from "./Submission";
 
-export default async function SubmissionPage({ params }: any) {
-  const data = await getReceipt({ caseId: params.id });
+interface SubmissionProps {
+  params: {
+    id: string
+  }
+}
 
-  if (!data) return notFound();
+export default async function SubmissionPage({ params }: SubmissionProps) {
+  const props = await params;
 
   return (
     <main className="max-w-4xl mx-auto p-6 space-y-6">
         <div>
             <Navbar />
         </div>  
-      <header className="space-y-2">
-        <h1 className="text-4xl font-bold">{data.title}</h1>
-        <p className="text-muted-foreground">{data.summary}</p>
-      </header>
 
-      {data.quotes && (
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">Quotes</h2>
-          <article className="prose dark:prose-invert">{data.quotes}</article>
-        </section>
-      )}
-
-      {data.sources && (
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">Sources</h2>
-          <p className="break-words">{data.sources}</p>
-        </section>
-      )}
-
-      {data.opinion && (
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">Personal Opinion</h2>
-          <p className="italic">{data.opinion}</p>
-        </section>
-      )}
+        <Submission id={props.id}/>
     </main>
   );
 }

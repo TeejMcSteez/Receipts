@@ -23,7 +23,7 @@ export async function getReceipt({ caseId }: { caseId: string }) {
     .eq("id", caseId)
     .maybeSingle();
 
-    return data ?? "";
+    return data ?? null;
 }
 /**
  * Uses postgresql rpc function to fuzzy search the db
