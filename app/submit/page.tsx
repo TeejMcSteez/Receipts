@@ -33,7 +33,7 @@ export default function Submit() {
     title: "",
     summary: "",
     agencies: [],
-    tags: [],
+    tags: [""],
     quotes: [""],
     sources: [""],
     opinion: "",
@@ -95,6 +95,11 @@ export default function Submit() {
           value={form.opinion}
           placeholder="Opinion"
           onChange={(e) => setForm({ ...form, opinion: e.target.value })}
+        />
+        <Textarea
+          value={form.tags.join('\n')}
+          placeholder="Tags"
+          onChange={(e) => setForm({ ...form, tags: e.target.value.split("\n") })}
         />
 
         <Button type="submit">Submit</Button>
