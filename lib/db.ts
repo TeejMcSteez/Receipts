@@ -53,3 +53,20 @@ export async function getCases() {
 
     return data ?? [];
 }
+/**
+ * 
+ * @param id - uuid in database
+ * @returns data: {
+ *  title: any;
+ *  summary: any;
+ *  opinion: any; }[ ] | null
+ */
+export default async function getCase({ id }: {id: string}) {
+  const { data, error } = await supabase
+    .from("cases")
+    .select("title, summary, opinion")
+    .eq("id", id)
+    .single();
+
+    return data ?? null;
+}
