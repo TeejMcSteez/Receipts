@@ -7,7 +7,7 @@ export default async function Submission({ id }: { id: string }) {
     if (!data) return notFound();
 
     return(
-        <div className="mx-auto space-y-6">
+        <div className="mx-auto space-y-6 text-center">
             <header className="space-y-4">
                 <h1 className="text-4xl font-bold">{data.title}</h1>
                 <p className="text-muted-foreground">{data.summary}</p>
